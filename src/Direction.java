@@ -1,2 +1,9 @@
-package PACKAGE_NAME;public class Direction {
+/**
+ * Represents cardinal directions: NORTH, SOUTH, EAST, and WEST.
+ */
+public enum Direction {
+    NORTH,
+    SOUTH,
+    EAST,
+    WEST,
 }
