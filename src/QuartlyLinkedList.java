@@ -4,8 +4,6 @@ public class QuartlyLinkedList <T extends Cloneable> implements Iterable<QuartNo
 
     private QuartNode<T> root;
 
-
-
     public QuartlyLinkedList(){
         this.root=null;
     }
@@ -84,4 +82,44 @@ public class QuartlyLinkedList <T extends Cloneable> implements Iterable<QuartNo
     public Iterator<QuartNode<T>> iterator () {
         return new QuartlyLinkedListIterator<>(this.getRoot());
     }
+
+//    @Override
+//    public QuartlyLinkedList clone(){
+//        try {
+//            QuartlyLinkedList<T> copy= (QuartlyLinkedList<T>) super.clone();
+//            copy.root= new QuartNode<>(this.root.clone());
+//            Iterator<QuartNode<T>> iterator = iterator();
+//            while (iterator.hasNext()) {
+//                QuartNode<T> element = iterator.next();
+//            }
+//            return copy;
+//        } catch(CloneNotSupportedException e) {
+//            return null;
+//        }
+//    }
+
+    @Override
+    public QuartlyLinkedList<T> clone() {
+        try {
+            QuartlyLinkedList<T> copy = (QuartlyLinkedList<T>) super.clone();
+            copy.root = cloneNode(root); // Cloning the root node
+            return copy;
+        } catch (CloneNotSupportedException e) {
+            return null;
+        }
+    }
+
+    // Helper method to clone a QuartNode and its neighbors recursively
+    private QuartNode<T> cloneNode(QuartNode<T> node) {
+        if (node == null) {
+            return null;
+        }
+        QuartNode<T> clonedNode = new QuartNode<>(node.clone()); // Cloning the value of the node
+        clonedNode.setNorth(cloneNode(node.getDirection(Direction.NORTH))); // Cloning north neighbor recursively
+        clonedNode.setEast(cloneNode(node.getDirection(Direction.EAST)));   // Cloning east neighbor recursively
+        clonedNode.setSouth(cloneNode(node.getDirection(Direction.SOUTH))); // Cloning south neighbor recursively
+        clonedNode.setWest(cloneNode(node.getDirection(Direction.WEST)));   // Cloning west neighbor recursively
+        return clonedNode;
+    }
+
 }

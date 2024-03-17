@@ -205,4 +205,17 @@ public class LargeBag extends Bag{
         return result;
     }
 
+    @Override
+    public LargeBag clone() {
+        LargeBag clonedBag = (LargeBag) super.clone();
+        // Clone the array of inventory
+        clonedBag.inventory = inventory.clone();
+        for (int i = 0; i < inventory.length; i++) {
+            if (inventory[i] != null) {
+                clonedBag.inventory[i] = inventory[i].clone();
+            }
+        }
+        return clonedBag;
+    }
+
 }

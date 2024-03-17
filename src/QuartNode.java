@@ -13,14 +13,6 @@ public class QuartNode<T extends Cloneable> implements Cloneable {
         this.west = null;
     }
 
-    public T getValue() {
-        return value;
-    }
-
-    public void setValue(T value) {
-        this.value = value;
-    }
-
     public QuartNode(T value, Direction d, QuartNode<T> other){
         QuartNode<T> newNode=new QuartNode<T>(value);
         if(d==Direction.NORTH){
@@ -37,6 +29,16 @@ public class QuartNode<T extends Cloneable> implements Cloneable {
             other.east=newNode;
         }
     }
+
+    public T getValue() {
+        return value;
+    }
+
+    public void setValue(T value) {
+        this.value = value;
+    }
+
+
     public QuartNode<T> getDirection(Direction d){
         if(d==Direction.NORTH){
             return this.north;
@@ -64,6 +66,18 @@ public class QuartNode<T extends Cloneable> implements Cloneable {
         return null;
     }
 
+    public void setOppDirection(Direction d, QuartNode<T> node) {
+        if (d == Direction.NORTH) {
+            this.south = node;
+        } else if (d == Direction.SOUTH) {
+            this.north = node;
+        } else if (d == Direction.EAST) {
+            this.west = node;
+        } else if (d == Direction.WEST) {
+            this.east = node;
+        }
+    }
+
     public void setNorth(QuartNode<T>newNode){
         this.north=newNode;
     }
@@ -79,8 +93,8 @@ public class QuartNode<T extends Cloneable> implements Cloneable {
 
 
 
-    public QuartNode<T> getNeighbor(Direction d){//check if i need to write QuartNode<T> n=null and returns it.
-        if (d==Direction.NORTH){
+    public QuartNode<T> getNeighbor(Direction d){
+        if (d== Direction.NORTH){
             return this.north;
         } else if (d==Direction.SOUTH){
             return this.south;
@@ -93,17 +107,13 @@ public class QuartNode<T extends Cloneable> implements Cloneable {
     }
 
     @Override
-    protected T clone(){
+    public T clone(){
         try{
             return (T) super.clone();
 
         } catch (CloneNotSupportedException e) {
             return null;
         }
-
     }
-
-
-
 
 }

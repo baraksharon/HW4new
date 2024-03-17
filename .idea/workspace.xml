@@ -4,25 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db1e43e6-1356-4667-81d8-675098fb49e2" name="Changes" comment="firstHW4">
-      <change afterPath="$PROJECT_DIR$/src/DirectionIsOccupiedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/NoSuchElementException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QuartNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QuartlyLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QuartlyLinkedListIterator.java" afterDir="false" />
+    <list default="true" id="db1e43e6-1356-4667-81d8-675098fb49e2" name="Changes" comment="firstHW4_01">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Bag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Direction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Key.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LargeBag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LargeBag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuartNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuartNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuartlyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuartlyLinkedList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Relic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Relic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room.java" afterDir="false" />
     </list>
-    <list id="2642b105-0ff9-4152-8f5b-7273e1429c96" name="Changes by sagid" comment="" />
+    <list id="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" name="Changes by sagid" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Bag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LargeBag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LargeBag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Relic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Relic.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +39,38 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/LargeBag.java">
+      <ranges>
+        <range start1="0" end1="1" start2="0" end2="1" changelist="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" />
+        <range start1="206" end1="206" start2="206" end2="219" changelist="db1e43e6-1356-4667-81d8-675098fb49e2" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Bag.java">
+      <ranges>
+        <range start1="2" end1="3" start2="2" end2="3" changelist="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" />
+        <range start1="247" end1="247" start2="247" end2="262" changelist="db1e43e6-1356-4667-81d8-675098fb49e2" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Key.java">
+      <ranges>
+        <range start1="0" end1="1" start2="0" end2="1" changelist="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" />
+        <range start1="118" end1="118" start2="118" end2="127" changelist="db1e43e6-1356-4667-81d8-675098fb49e2" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Player.java">
+      <ranges>
+        <range start1="0" end1="1" start2="0" end2="1" changelist="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" />
+        <range start1="193" end1="193" start2="193" end2="209" changelist="db1e43e6-1356-4667-81d8-675098fb49e2" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Relic.java">
+      <ranges>
+        <range start1="0" end1="1" start2="0" end2="1" changelist="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" />
+        <range start1="87" end1="87" start2="87" end2="92" changelist="db1e43e6-1356-4667-81d8-675098fb49e2" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -47,18 +80,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -67,8 +100,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710529747888</updated>
-      <workItem from="1710529749832" duration="11051000" />
+      <workItem from="1710529749832" duration="11278000" />
+      <workItem from="1710601448486" duration="4604000" />
+      <workItem from="1710606084319" duration="4348000" />
     </task>
+    <task id="LOCAL‎-00001" summary="firstHW4_01">
+      <created>1710541263122</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL‎-00001" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1710541263122</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -76,6 +119,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="firstHW4" />
-    <option name="LAST_COMMIT_MESSAGE" value="firstHW4" />
+    <MESSAGE value="firstHW4_01" />
+    <option name="LAST_COMMIT_MESSAGE" value="firstHW4_01" />
   </component>
 </project>

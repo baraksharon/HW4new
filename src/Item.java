@@ -1,4 +1,4 @@
-abstract class Item {
+abstract class Item implements Cloneable {
     protected String name;
     protected int value;
 
@@ -82,4 +82,13 @@ abstract class Item {
      * @param player The player who is using the item.
      */
     public abstract void useItem(Player player);
+
+    @Override
+    public Item clone() {
+        try {
+            return (Item) super.clone();
+        } catch (CloneNotSupportedException e) {
+            return null;
+        }
+    }
 }

@@ -85,4 +85,9 @@ public class Relic extends Item {
         result = multiplier * result + value;
         return result;
     }
+
+    @Override
+    public Relic clone() {
+        return (Relic) super.clone();
+    }
 }

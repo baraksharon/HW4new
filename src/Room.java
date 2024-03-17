@@ -1,4 +1,4 @@
-public class Room {
+public class Room implements Cloneable{
     private String name;
     private Item[] listItems;
     private Room[] roomsDirections;
@@ -168,7 +168,7 @@ public class Room {
             other.getRoomsDirections()[d2]=this;
             System.out.println(this.getRoomName()+" and "+other.getRoomName()+" are connected"+".");
         }
-        else {System.out.println("Could not connect "+this.getRoomName()+" and "+other.getRoomName()+".");}
+//        else {System.out.println("Could not connect "+this.getRoomName()+" and "+other.getRoomName()+".");}
     }
 
     /**
@@ -229,6 +229,33 @@ public class Room {
         result = multiplier * result + sumValuesOfRoomItems();
         return result;
     }
+
+    public Room clone() {
+        try {
+            Room clonedRoom = (Room) super.clone();
+            // Clone the name (String is immutable, no need to clone)
+            // Clone the array of items
+            clonedRoom.listItems = listItems.clone();
+            for (int i = 0; i < listItems.length; i++) {
+                if (listItems[i] != null) {
+                    clonedRoom.listItems[i] = listItems[i].clone();
+                }
+            }
+            // Clone the array of roomsDirections
+            clonedRoom.roomsDirections = roomsDirections.clone();
+            for (int i = 0; i < roomsDirections.length; i++) {
+                if (roomsDirections[i] != null) {
+                    clonedRoom.roomsDirections[i] = roomsDirections[i].clone();
+                }
+            }
+            // Clone the room key
+            clonedRoom.roomkey = (roomkey != null) ? roomkey.clone() : null;
+            return clonedRoom;
+        } catch (CloneNotSupportedException e) {
+            return null;
+        }
+    }
+
 
 
 }

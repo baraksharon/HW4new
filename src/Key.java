@@ -116,4 +116,13 @@ public class Key extends Item{
         result = 31 * result + value;
         return result;
     }
+
+    @Override
+    public Key clone() {
+        Key clonedKey = (Key) super.clone();
+        // Clone the keyStatus field
+        clonedKey.keyStatus = this.keyStatus;
+        return clonedKey;
+    }
+
 }

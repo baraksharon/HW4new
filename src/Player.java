@@ -191,5 +191,21 @@ public class Player {
         return result;
     }
 
+    @Override
+    public Player clone() {
+        try {
+            // Shallow clone for player
+            Player clonedPlayer = (Player) super.clone();
+            // Deep clone for the bag
+            clonedPlayer.playerBag = this.playerBag.clone();
+            // If the current room is not null, clone it as well
+            if (this.currentRoom != null) {
+                clonedPlayer.currentRoom = this.currentRoom.clone();
+            }
+            return clonedPlayer;
+        } catch (CloneNotSupportedException e) {
+            return null;
+        }
+    }
 
 }

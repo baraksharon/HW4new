@@ -246,4 +246,19 @@ public class Bag extends Item {
         return result;
     }
 
+    @Override
+    public Bag clone() {
+        Bag clonedBag = (Bag) super.clone();
+        // Clone the inventory array
+        clonedBag.inventory = new Item[this.inventory.length];
+        for (int i = 0; i < this.inventory.length; i++) {
+            // Clone each item in the inventory array
+            if (this.inventory[i] != null) {
+                clonedBag.inventory[i] = this.inventory[i].clone();
+            }
+        }
+        return clonedBag;
+    }
+
+
 }

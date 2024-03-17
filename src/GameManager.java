@@ -1,12 +1,14 @@
-public class GameManager {
-    private Room[] rooms;
+import java.util.Iterator;
+
+public class GameManager implements Cloneable  {
+    private QuartlyLinkedList<Room> rooms;
     private Player player;
 
     /**
      * creating the rooms in an array
      */
     public GameManager() {
-        this.rooms = new Room[5];
+        this.rooms = new QuartlyLinkedList<Room>();
         this.player = null;
     }
 
@@ -24,27 +26,56 @@ public class GameManager {
         }
     }
 
-    /**
-     * adding a room
-     *
-     * @param r The room to add.
-     */
-    public void addRoom(Room r) {
-        int counter = 0;
-        boolean isAdded = false;
-        while (isAdded == false && counter < rooms.length) {
-            if (rooms[counter] == null) {
-                rooms[counter] = r;
-                System.out.println(rooms[counter].getRoomName() + " was added to the game.");
-                isAdded = true;
-            } else {
-                counter += 1;
+//    /**
+//     * adding a room
+//     *
+//     * @param r The room to add.
+//     */
+//    public void addRoom(Room r) {
+//        int counter = 0;
+//        boolean isAdded = false;
+//        while (isAdded == false && counter < rooms.length) {
+//            if (rooms[counter] == null) {
+//                rooms[counter] = r;
+//                System.out.println(rooms[counter].getRoomName() + " was added to the game.");
+//                isAdded = true;
+//            } else {
+//                counter += 1;
+//            }
+//        }
+//        if (isAdded == false) {
+//            System.out.println("Could not add " + r.getRoomName() + " to the game.");
+//        }
+
+    public void addRoom(Room toInsert, Room target, Direction direction) {
+        boolean roomExists = false;
+        boolean exitOccupied = false;
+
+        // Check if the target room exists
+        Iterator<QuartNode<Room>> iterator = rooms.iterator();
+        while (iterator.hasNext()) {
+            QuartNode<Room> quartNode = iterator.next();
+            Room room = quartNode.getValue();
+            if (room.equals(target)) {
+                roomExists = true;
+                if (quartNode.getDirection(direction) != null) {
+                    exitOccupied = true;
+                } else {
+                    QuartNode<Room> newNode = new QuartNode<>(toInsert, direction, quartNode);
+                    quartNode.setOppDirection(direction, newNode);
+                    System.out.println(toInsert.getRoomName() + " was added to the game and connected from " +
+                            target.getRoomName() + " via the " + direction.name().toLowerCase() + " exit.");
+                }
+                break;
             }
         }
-        if (isAdded == false) {
-            System.out.println("Could not add " + r.getRoomName() + " to the game.");
-        }
 
+        // Handle cases where the target room doesn't exist or the exit is occupied
+        if (!roomExists) {
+            throw new RoomDoesNotExist();
+        } else if (exitOccupied) {
+            throw new ExitIsOccupied();
+        }
     }
 
     /**
@@ -95,7 +126,7 @@ public class GameManager {
                 isthere = true;
                 if (this.player != null) {
                     if (this.player.getCurrentRoom().equals(r)) {//if the player's current room is what we want to remove
-                        System.out.println(r.getRoomName() + " could not be removed.");
+//                        System.out.println(r.getRoomName() + " could not be removed.");
                     } else {
                         for (int j = 0; j < rooms.length; j++) {
                             rooms[j].removeFromRoomDirection(r);
