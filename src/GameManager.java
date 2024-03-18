@@ -61,20 +61,20 @@ public class GameManager implements Cloneable  {
                 if (quartNode.getDirection(direction) != null) {
                     exitOccupied = true;
                 } else {
-                    QuartNode<Room> newNode = new QuartNode<>(toInsert, direction, quartNode);
-                    quartNode.setOppDirection(direction, newNode);
+//                    QuartNode<Room> newNode = new QuartNode<>(toInsert, direction, quartNode);
+//                    quartNode.setOppDirection(direction, newNode);
+                    rooms.add(toInsert, target, direction);
                     System.out.println(toInsert.getRoomName() + " was added to the game and connected from " +
                             target.getRoomName() + " via the " + direction.name().toLowerCase() + " exit.");
                 }
                 break;
             }
         }
-
         // Handle cases where the target room doesn't exist or the exit is occupied
         if (!roomExists) {
-            throw new RoomDoesNotExist();
+            throw new RoomDoesNotExistException();
         } else if (exitOccupied) {
-            throw new ExitIsOccupied();
+            throw new ExitIsOccupiedException();
         }
     }
 
@@ -84,19 +84,40 @@ public class GameManager implements Cloneable  {
      * @param r  The room to add the item to.
      * @param it The item to be added.
      */
+
     public void addItem(Room r, Item it) {
         boolean isThere = false;
-        for (int i = 0; i < rooms.length; i++) {
-            if (rooms[i] != null && rooms[i].equals(r)) {
-                r.addItemToRoom(it);
-                isThere = true;
+        Iterator<QuartNode<Room>> iterator = rooms.iterator();
+        while (iterator.hasNext()) {
+
+            QuartNode<Room> quartNode = iterator.next();
+            if(quartNode.getValue() != null){
+                Room itRoom = quartNode.getValue();
+                if(itRoom != null && itRoom.equals(r)){
+                    r.addItemToRoom(it);
+                    isThere = true;
+                }
             }
         }
         if (!isThere) {
             System.out.println("Could not add " + it.getName() + " to the game.");
         }
-
     }
+
+
+//    public void addItem(Room r, Item it) {
+//        boolean isThere = false;
+//        for (int i = 0; i < rooms.length; i++) {
+//            if (rooms[i] != null && rooms[i].equals(r)) {
+//                r.addItemToRoom(it);
+//                isThere = true;
+//            }
+//        }
+//        if (!isThere) {
+//            System.out.println("Could not add " + it.getName() + " to the game.");
+//        }
+//
+//    }
 
     /**
      * Removes a player from the game.
@@ -114,48 +135,53 @@ public class GameManager implements Cloneable  {
         }
     }
 
-    /**
-     * Removes a room from the game.
-     *
-     * @param r The room to be removed.
-     */
-    public void removeRoom(Room r) {
-        boolean isthere = false; // if the room is exists in the room array
-        for (int i = 0; i < rooms.length; i++) {
-            if (rooms[i] != null && rooms[i].equals(r)) {
-                isthere = true;
-                if (this.player != null) {
-                    if (this.player.getCurrentRoom().equals(r)) {//if the player's current room is what we want to remove
-//                        System.out.println(r.getRoomName() + " could not be removed.");
-                    } else {
-                        for (int j = 0; j < rooms.length; j++) {
-                            rooms[j].removeFromRoomDirection(r);
-                        }
-                        rooms[i].removeItemFromRoom();
-                        rooms[i].setRoomKey(null);//cleaning the spot for the key in the room.
-                        rooms[i].setKeyRoomStatus(false);//changing the key status to "false" in the room
-                        rooms[i] = null;
-                        System.out.println(r.getRoomName() + " was removed from the game.");
-                    }
-                } else if (isthere) {// we want to remove room r from the array, and disconnect the others rooms to him
-                    for (int k = 0; k < rooms.length; k++) {
-                        if (rooms[k] != null) {
-                            rooms[k].removeFromRoomDirection(r);
-                        }
-                    }
-                    rooms[i].removeItemFromRoom();
-                    rooms[i].setRoomKey(null);//cleaning the spot for the key in the room.
-                    rooms[i].setKeyRoomStatus(false);//changing the key status to "false" in the room
-                    rooms[i] = null;
-                    System.out.println(r.getRoomName() + " was removed from the game.");
-                }
-            }
-
-        }
-        if (isthere == false) {
-            System.out.println(r.getRoomName() + " does not exist.");
-        }
+    public void removeRoom(Room r){
+        rooms.remove(r);
     }
+
+
+//    /**
+//     * Removes a room from the game.
+//     *
+//     * @param r The room to be removed.
+//     */
+//    public void removeRoom(Room r) {
+//        boolean isthere = false; // if the room is exists
+//        for (int i = 0; i < rooms.length; i++) {
+//            if (rooms[i] != null && rooms[i].equals(r)) {
+//                isthere = true;
+//                if (this.player != null) {
+//                    if (this.player.getCurrentRoom().equals(r)) {//if the player's current room is what we want to remove
+////                        System.out.println(r.getRoomName() + " could not be removed.");
+//                    } else {
+//                        for (int j = 0; j < rooms.length; j++) {
+//                            rooms[j].removeFromRoomDirection(r);
+//                        }
+//                        rooms[i].removeItemFromRoom();
+//                        rooms[i].setRoomKey(null);//cleaning the spot for the key in the room.
+//                        rooms[i].setKeyRoomStatus(false);//changing the key status to "false" in the room
+//                        rooms[i] = null;
+//                        System.out.println(r.getRoomName() + " was removed from the game.");
+//                    }
+//                } else if (isthere) {// we want to remove room r from the array, and disconnect the others rooms to him
+//                    for (int k = 0; k < rooms.length; k++) {
+//                        if (rooms[k] != null) {
+//                            rooms[k].removeFromRoomDirection(r);
+//                        }
+//                    }
+//                    rooms[i].removeItemFromRoom();
+//                    rooms[i].setRoomKey(null);//cleaning the spot for the key in the room.
+//                    rooms[i].setKeyRoomStatus(false);//changing the key status to "false" in the room
+//                    rooms[i] = null;
+//                    System.out.println(r.getRoomName() + " was removed from the game.");
+//                }
+//            }
+//
+//        }
+//        if (isthere == false) {
+//            System.out.println(r.getRoomName() + " does not exist.");
+//        }
+//    }
 
     /**
      * Connects two rooms in the game.
@@ -164,9 +190,9 @@ public class GameManager implements Cloneable  {
      * @param room2 The second room to connect.
      * @param d     The direction of the connection.
      */
-    public void connectRooms(Room room1, Room room2, Direction d) {
-        room1.roomToRoomConnection(room2, d);
-    }
+//    public void connectRooms(Room room1, Room room2, Direction d) {
+//        room1.roomToRoomConnection(room2, d);
+//    }
 
     /**
      * Starts the player in a specified room.
