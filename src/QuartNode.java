@@ -78,17 +78,15 @@ public class QuartNode<T extends Cloneable> implements Cloneable {
         }
     }
 
-    public void setNorth(QuartNode<T>newNode){
-        this.north=newNode;
+    public void setNorth(QuartNode<T> newNode){
+        this.north= newNode;
     }
-    public void setSouth(QuartNode<T>newNode){
-        this.south=newNode;
+    public void setSouth(QuartNode<T> newNode){ this.south= newNode;}
+    public void setEast(QuartNode<T> newNode){
+        this.east= newNode;
     }
-    public void setEast(QuartNode<T>newNode){
-        this.east=newNode;
-    }
-    public void setWest(QuartNode<T>newNode){
-        this.west=newNode;
+    public void setWest(QuartNode<T> newNode){
+        this.west= newNode;
     }
 
 

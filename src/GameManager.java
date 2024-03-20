@@ -210,40 +210,63 @@ public class GameManager implements Cloneable  {
 
     }
 
-    /**
-     * Moves the player in a specified direction.
-     *
-     * @param dMove The direction in which to move the player.
-     */
     public void movePlayer(Direction dMove) {
+        boolean isFound= false;
         Room current = this.player.getCurrentRoom();
-        int d = -1;
-        String directionName = "";
-        switch (dMove) {
-            case NORTH:
-                d = 0;
-                directionName = "north";
-                break;
-            case SOUTH:
-                d = 1;
-                directionName = "south";
-                break;
-            case EAST:
-                d = 2;
-                directionName = "east";
-                break;
-            case WEST:
-                d = 3;
-                directionName = "west";
-                break;
+        Iterator<QuartNode<Room>> iterator = rooms.iterator();
+        while (iterator.hasNext()) {
+            QuartNode<Room> quartNode = iterator.next();
+            Room room = quartNode.getValue();
+            if (room != null && room.equals(current)) {
+                isFound= true;
+                if (!current.getPuzzleStatus() && quartNode.getDirection(dMove) != null) {
+                    System.out.println(this.player.getName() + " moved from " + current.getRoomName() + " to " + quartNode.getDirection(dMove).getValue().getRoomName() + " via the " + dMove + " exit.");
+                    this.player.setCurrentRoom(quartNode.getNeighbor(dMove).getValue());
+                } else{
+                    System.out.println(this.player.getName() + " could not move via the " + dMove + " exit.");
+                }
+            }
         }
-        if (d != -1 && current.getRoomsDirections()[d] != null && !current.getPuzzleStatus()) {
-            System.out.println(this.player.getName() + " moved from " + current.getRoomName() + " to " + current.getRoomsDirections()[d].getRoomName() + " via the " + directionName + " exit.");
-            this.player.setCurrentRoom(current.getRoomsDirections()[d]);
-        } else {
-            System.out.println(this.player.getName() + " could not move via the " + directionName + " exit.");
+        if (isFound){
+            System.out.println(this.player.getName() + " could not move via the " + dMove + " exit.");
         }
     }
+
+
+//    /**
+//     * Moves the player in a specified direction.
+//     *
+//     * @param dMove The direction in which to move the player.
+//     */
+//    public void movePlayer(Direction dMove) {
+//        Room current = this.player.getCurrentRoom();
+//        int d = -1;
+//        String directionName = "";
+//        switch (dMove) {
+//            case NORTH:
+//                d = 0;
+//                directionName = "north";
+//                break;
+//            case SOUTH:
+//                d = 1;
+//                directionName = "south";
+//                break;
+//            case EAST:
+//                d = 2;
+//                directionName = "east";
+//                break;
+//            case WEST:
+//                d = 3;
+//                directionName = "west";
+//                break;
+//        }
+//        if (d != -1 && current.getRoomsDirections()[d] != null && !current.getPuzzleStatus()) {
+//            System.out.println(this.player.getName() + " moved from " + current.getRoomName() + " to " + current.getRoomsDirections()[d].getRoomName() + " via the " + directionName + " exit.");
+//            this.player.setCurrentRoom(current.getRoomsDirections()[d]);
+//        } else {
+//            System.out.println(this.player.getName() + " could not move via the " + directionName + " exit.");
+//        }
+//    }
 
     /**
      * Picks up an item from the current room.

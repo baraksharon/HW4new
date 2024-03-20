@@ -1,7 +1,7 @@
 public class Room implements Cloneable{
     private String name;
     private Item[] listItems;
-    private Room[] roomsDirections;
+//    private Room[] roomsDirections;
     private boolean puzzleStatus;
     private Key roomkey;
     private boolean keyRoomStatus;
@@ -17,7 +17,7 @@ public class Room implements Cloneable{
     public Room(String name) {
         this.name = name;
         this.listItems = new Item[defultCap];
-        this.roomsDirections = new Room[directionsNum];//north-0,south-1,east-2,west-3
+//        this.roomsDirections = new Room[directionsNum];//north-0,south-1,east-2,west-3
         this.puzzleStatus = false;
         this.roomkey= null;
         this.keyRoomStatus = false;
@@ -94,22 +94,23 @@ public class Room implements Cloneable{
         }
 
     }
-    /**
-     * Removes the specified room from the array of room directions.
-     * If the specified room is connected in the array of room directions,
-     * sets its position in the array to null, effectively disconnecting it.
-     *
-     * @param r the room to be removed from the array of room directions
-     */
-    public void removeFromRoomDirection(Room r){
-        for (int i=0;i<roomsDirections.length;i++){
-            if(this.roomsDirections[i]!= null){
-                if(this.roomsDirections[i].equals(r)){
-                    this.roomsDirections[i]=null;
-                }
-            }
-        }
-    }
+
+//    /**
+//     * Removes the specified room from the array of room directions.
+//     * If the specified room is connected in the array of room directions,
+//     * sets its position in the array to null, effectively disconnecting it.
+//     *
+//     * @param r the room to be removed from the array of room directions
+//     */
+//    public void removeFromRoomDirection(Room r){
+//        for (int i=0;i<roomsDirections.length;i++){
+//            if(this.roomsDirections[i]!= null){
+//                if(this.roomsDirections[i].equals(r)){
+//                    this.roomsDirections[i]=null;
+//                }
+//            }
+//        }
+//    }
 
     /**
      * Removes the items from the room.
@@ -163,11 +164,11 @@ public class Room implements Cloneable{
                 d2=2;
                 break;
         }
-        if(this.getRoomsDirections()[d1]== null && other.getRoomsDirections()[d2]== null){
-            this.getRoomsDirections()[d1]=other;
-            other.getRoomsDirections()[d2]=this;
-            System.out.println(this.getRoomName()+" and "+other.getRoomName()+" are connected"+".");
-        }
+//        if(this.getRoomsDirections()[d1]== null && other.getRoomsDirections()[d2]== null){
+//            this.getRoomsDirections()[d1]=other;
+//            other.getRoomsDirections()[d2]=this;
+//            System.out.println(this.getRoomName()+" and "+other.getRoomName()+" are connected"+".");
+//        }
 //        else {System.out.println("Could not connect "+this.getRoomName()+" and "+other.getRoomName()+".");}
     }
 
@@ -176,7 +177,7 @@ public class Room implements Cloneable{
      *
      * @return The array of connected rooms in different directions.
      */
-    public Room[] getRoomsDirections() {return roomsDirections;}
+//    public Room[] getRoomsDirections() {return roomsDirections;}
 
 
     /**
@@ -241,13 +242,13 @@ public class Room implements Cloneable{
                     clonedRoom.listItems[i] = listItems[i].clone();
                 }
             }
-            // Clone the array of roomsDirections
-            clonedRoom.roomsDirections = roomsDirections.clone();
-            for (int i = 0; i < roomsDirections.length; i++) {
-                if (roomsDirections[i] != null) {
-                    clonedRoom.roomsDirections[i] = roomsDirections[i].clone();
-                }
-            }
+//            // Clone the array of roomsDirections
+//            clonedRoom.roomsDirections = roomsDirections.clone();
+//            for (int i = 0; i < roomsDirections.length; i++) {
+//                if (roomsDirections[i] != null) {
+//                    clonedRoom.roomsDirections[i] = roomsDirections[i].clone();
+//                }
+//            }
             // Clone the room key
             clonedRoom.roomkey = (roomkey != null) ? roomkey.clone() : null;
             return clonedRoom;
