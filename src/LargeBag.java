@@ -98,7 +98,6 @@ public class LargeBag extends Bag{
         return place;
     }
 
-
     /**
      * Uses the large bag item by transferring items from the player's inventory to the large bag.
      * If the large bag is nearby and there is enough space in it, the items from the player's inventory are transferred.
@@ -155,7 +154,6 @@ public class LargeBag extends Bag{
         }
     }
 
-
     /**
      * Calculates the sum of values of items in the large bag.
      *
@@ -205,6 +203,12 @@ public class LargeBag extends Bag{
         return result;
     }
 
+    /**
+     * Overrides the clone method to create a deep copy of the LargeBag object.
+     * This method clones the array of inventory and all the items within it.
+     *
+     * @return a cloned LargeBag object
+     */
     @Override
     public LargeBag clone() {
         LargeBag clonedBag = (LargeBag) super.clone();

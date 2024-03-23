@@ -117,8 +117,14 @@ public class Key extends Item{
         return result;
     }
 
+    /**
+     * Overrides the clone method to create a shallow copy of the Key object.
+     * This method clones the keyStatus field.
+     *
+     * @return a cloned Key object
+     */
     @Override
-    public Key clone() {
+    public Key clone(){
         Key clonedKey = (Key) super.clone();
         // Clone the keyStatus field
         clonedKey.keyStatus = this.keyStatus;

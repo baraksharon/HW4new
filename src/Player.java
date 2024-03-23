@@ -191,6 +191,11 @@ public class Player {
         return result;
     }
 
+    /**
+     * Creates a clone of the Player object.
+     *
+     * @return A cloned Player object or null if cloning is not supported.
+     */
     @Override
     public Player clone() {
         try {

@@ -4,39 +4,35 @@ public class QuartlyLinkedList <T extends Cloneable> implements Iterable<QuartNo
 
     private QuartNode<T> root;
 
-    public QuartlyLinkedList(){
-        this.root=null;
+    /**
+     * Constructs an empty QuartlyLinkedList with no root node.
+     */
+    public QuartlyLinkedList() {
+        this.root = null;
     }
 
-    public QuartNode getRoot(){
+    /**
+     * Returns the root node of this QuartlyLinkedList.
+     *
+     * @return the root node of this QuartlyLinkedList
+     */
+    public QuartNode<T> getRoot() {
         return this.root;
     }
 
-//    public void add(QuartNode<T> toInsert, QuartNode<T> target, Direction d) {
-//        if (this == null) {
-//            this.root = new QuartNode<>(toInsert.getValue());
-//        } else {
-//            Iterator<T> iterator = iterator();
-//            while (iterator.hasNext()) {
-//                T element = iterator.next();
-//                if(element.equals(target.getValue())){
-//                    if(target.getNeighbor(d)==null){
-//                        QuartNode<T> newNode= new QuartNode<>(toInsert.getValue(), d, target);
-//                    } else {
-//                        throw new DirectionIsOccupiedException();
-//                    }
-//                }
-//            }
-//            throw new NoSuchElementException();
-//        }
-//    }
-
+    /**
+     * Adds the specified element to this QuartlyLinkedList adjacent to the target element in the specified direction.
+     *
+     * @param toInsert the element to be added
+     * @param target the target element to which the new element will be adjacent
+     * @param d the direction in which to insert the new element
+     * @throws DirectionIsOccupiedException if the specified direction is already occupied by another element
+     * @throws NoSuchElementException if the target element is not found in this QuartlyLinkedList
+     */
     public void add(T toInsert,T target,Direction d){
-
         if(this==null){
             this.root=new QuartNode<>(toInsert);
-        }
-        else {
+        } else {
             Iterator<QuartNode<T>> iterator = iterator();
             while (iterator.hasNext()) {
                 QuartNode<T> element = iterator.next();
@@ -52,6 +48,13 @@ public class QuartlyLinkedList <T extends Cloneable> implements Iterable<QuartNo
         }
     }
 
+    /**
+     * Removes the specified element from this QuartlyLinkedList if it is present.
+     * This method removes all references to the element in all directions.
+     *
+     * @param toRemove the element to be removed from this QuartlyLinkedList, if present
+     * @throws NoSuchElementException if the element is not present in this QuartlyLinkedList
+     */
     public void remove(T toRemove){
         Iterator<QuartNode<T>> iterator = iterator();
         while (iterator.hasNext()) {
@@ -78,26 +81,21 @@ public class QuartlyLinkedList <T extends Cloneable> implements Iterable<QuartNo
         throw new NoSuchElementException();
     }
 
-        @Override
+    /**
+     * Returns an iterator over the elements in this QuartlyLinkedList.
+     *
+     * @return an iterator over the elements in this QuartlyLinkedList
+     */
+    @Override
     public Iterator<QuartNode<T>> iterator () {
         return new QuartlyLinkedListIterator<>(this.getRoot());
     }
 
-//    @Override
-//    public QuartlyLinkedList clone(){
-//        try {
-//            QuartlyLinkedList<T> copy= (QuartlyLinkedList<T>) super.clone();
-//            copy.root= new QuartNode<>(this.root.clone());
-//            Iterator<QuartNode<T>> iterator = iterator();
-//            while (iterator.hasNext()) {
-//                QuartNode<T> element = iterator.next();
-//            }
-//            return copy;
-//        } catch(CloneNotSupportedException e) {
-//            return null;
-//        }
-//    }
-
+    /**
+     * Overrides the clone method to create a deep copy of the QuartlyLinkedList object.
+     *
+     * @return A cloned QuartlyLinkedList object or null if cloning is not supported.
+     */
     @Override
     public QuartlyLinkedList<T> clone() {
         try {
@@ -109,7 +107,12 @@ public class QuartlyLinkedList <T extends Cloneable> implements Iterable<QuartNo
         }
     }
 
-    // Helper method to clone a QuartNode and its neighbors recursively
+    /**
+     * Recursively clones a QuartNode and its neighbors.
+     *
+     * @param node The node to clone.
+     * @return The cloned QuartNode and its neighbors.
+     */
     private QuartNode<T> cloneNode(QuartNode<T> node) {
         if (node == null) {
             return null;

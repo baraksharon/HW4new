@@ -4,10 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db1e43e6-1356-4667-81d8-675098fb49e2" name="Changes" comment="firstHW4_03">
+    <list default="true" id="db1e43e6-1356-4667-81d8-675098fb49e2" name="Changes" comment="firstHW4_04">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Direction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DirectionIsOccupiedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DirectionIsOccupiedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExitIsOccupiedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ExitIsOccupiedException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LargeBag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LargeBag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NoSuchElementException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NoSuchElementException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuartNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuartNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuartlyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuartlyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Relic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Relic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RoomDoesNotExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RoomDoesNotExistException.java" afterDir="false" />
     </list>
     <list id="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" name="Changes by sagid" comment="">
       <change beforePath="$PROJECT_DIR$/src/Bag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bag.java" afterDir="false" />
@@ -30,6 +43,41 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Bag.java">
+      <ranges>
+        <range start1="2" end1="3" start2="2" end2="3" changelist="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" />
+        <range start1="248" end1="248" start2="248" end2="254" changelist="db1e43e6-1356-4667-81d8-675098fb49e2" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Key.java">
+      <ranges>
+        <range start1="0" end1="1" start2="0" end2="1" changelist="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" />
+        <range start1="119" end1="119" start2="119" end2="125" changelist="db1e43e6-1356-4667-81d8-675098fb49e2" />
+        <range start1="120" end1="121" start2="126" end2="127" changelist="db1e43e6-1356-4667-81d8-675098fb49e2" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/LargeBag.java">
+      <ranges>
+        <range start1="0" end1="1" start2="0" end2="1" changelist="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" />
+        <range start1="99" end1="100" start2="99" end2="99" changelist="db1e43e6-1356-4667-81d8-675098fb49e2" />
+        <range start1="157" end1="158" start2="156" end2="156" changelist="db1e43e6-1356-4667-81d8-675098fb49e2" />
+        <range start1="207" end1="207" start2="205" end2="211" changelist="db1e43e6-1356-4667-81d8-675098fb49e2" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Relic.java">
+      <ranges>
+        <range start1="0" end1="1" start2="0" end2="1" changelist="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" />
+        <range start1="88" end1="88" start2="88" end2="93" changelist="db1e43e6-1356-4667-81d8-675098fb49e2" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Player.java">
+      <ranges>
+        <range start1="0" end1="1" start2="0" end2="1" changelist="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" />
+        <range start1="193" end1="193" start2="193" end2="198" changelist="db1e43e6-1356-4667-81d8-675098fb49e2" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -62,7 +110,7 @@
       <updated>1710529747888</updated>
       <workItem from="1710529749832" duration="11278000" />
       <workItem from="1710601448486" duration="4604000" />
-      <workItem from="1710606084319" duration="17956000" />
+      <workItem from="1710606084319" duration="20458000" />
     </task>
     <task id="LOCAL‎-00001" summary="firstHW4_01">
       <created>1710541263122</created>
@@ -99,7 +147,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1710936254122</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL‎-00006" summary="firstHW4_04">
+      <created>1711213783741</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL‎-00006" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1711213783741</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,6 +165,7 @@
     <MESSAGE value="firstHW4_01" />
     <MESSAGE value="firstHW4_02" />
     <MESSAGE value="firstHW4_03" />
-    <option name="LAST_COMMIT_MESSAGE" value="firstHW4_03" />
+    <MESSAGE value="firstHW4_04" />
+    <option name="LAST_COMMIT_MESSAGE" value="firstHW4_04" />
   </component>
 </project>

@@ -7,6 +7,12 @@ public enum Direction {
     EAST,
     WEST;
 
+
+    /**
+     * Returns a lowercase representation of the enum constant.
+     *
+     * @return lowercase representation of the enum constant
+     */
     @Override
     public String toString() {
         // Returns the lowercase representation of the enum constant

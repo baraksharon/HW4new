@@ -86,6 +86,11 @@ public class Relic extends Item {
         return result;
     }
 
+    /**
+     * Performs a shallow copy of the Relic object.
+     *
+     * @return A shallow copy of the Relic object.
+     */
     @Override
     public Relic clone() {
         return (Relic) super.clone();

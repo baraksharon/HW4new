@@ -246,6 +246,12 @@ public class Bag extends Item {
         return result;
     }
 
+    /**
+     * Overrides the clone method to create a deep copy of the Bag object.
+     * This method clones the inventory array and all the items within it.
+     *
+     * @return a cloned Bag object
+     */
     @Override
     public Bag clone() {
         Bag clonedBag = (Bag) super.clone();

@@ -83,6 +83,11 @@ abstract class Item implements Cloneable {
      */
     public abstract void useItem(Player player);
 
+    /**
+     * Overrides the clone method to create a shallow copy of the Item object.
+     *
+     * @return a cloned Item object or null if cloning is not supported
+     */
     @Override
     public Item clone() {
         try {
