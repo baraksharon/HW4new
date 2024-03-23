@@ -63,10 +63,10 @@ public class Main {
 
         gameManager.addItem(room1, item1);
 
-        gameManager.addRoom(room1);
-        gameManager.addRoom(room2);
+//        gameManager.addRoom(room1);
+//        gameManager.addRoom(room2);
         gameManager.addItem(room1, item1);
-        gameManager.addRoom(room3);
+//        gameManager.addRoom(room3);
 
 
         System.out.println("Are room1 and room3 equal: " + room1.equals(room3));
@@ -95,11 +95,11 @@ public class Main {
 
         gameManager.addItem(room1, item1);
 
-        gameManager.addRoom(room1);
-        gameManager.addRoom(room2);
+//        gameManager.addRoom(room1);
+//        gameManager.addRoom(room2);
 
-        gameManager.removeRoom(room3);
-        gameManager.addRoom(room2);
+//        gameManager.removeRoom(room3);
+//        gameManager.addRoom(room2);
 
         gameManager.addItem(room2, item1);
         gameManager.addItem(room2, item2);
@@ -110,7 +110,7 @@ public class Main {
         gameManager.addPlayer(player);
         gameManager.startPlayer(room1);
 
-        gameManager.connectRooms(room1, room2, Direction.NORTH);
+//        gameManager.connectRooms(room1, room2, Direction.NORTH);
 
         gameManager.pickUpItem(item3);
         gameManager.activatePuzzle(room1);
@@ -153,10 +153,10 @@ public class Main {
 
         gameManager.addItem(room1, item1);
 
-        gameManager.addRoom(room1);
-        gameManager.addRoom(room2);
-
-        gameManager.connectRooms(room1, room2, Direction.NORTH);
+//        gameManager.addRoom(room1);
+//        gameManager.addRoom(room2);
+//
+//        gameManager.connectRooms(room1, room2, Direction.NORTH);
 
         gameManager.addItem(room2, item1);
         gameManager.addItem(room2, item2);

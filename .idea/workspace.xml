@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db1e43e6-1356-4667-81d8-675098fb49e2" name="Changes" comment="firstHW4_02">
+    <list default="true" id="db1e43e6-1356-4667-81d8-675098fb49e2" name="Changes" comment="firstHW4_03">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Direction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuartNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuartNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <list id="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" name="Changes by sagid" comment="">
       <change beforePath="$PROJECT_DIR$/src/Bag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bag.java" afterDir="false" />
@@ -64,7 +62,7 @@
       <updated>1710529747888</updated>
       <workItem from="1710529749832" duration="11278000" />
       <workItem from="1710601448486" duration="4604000" />
-      <workItem from="1710606084319" duration="15095000" />
+      <workItem from="1710606084319" duration="17956000" />
     </task>
     <task id="LOCAL‎-00001" summary="firstHW4_01">
       <created>1710541263122</created>
@@ -94,7 +92,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1710842588353</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL‎-00005" summary="firstHW4_03">
+      <created>1710936254122</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL‎-00005" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1710936254122</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +109,7 @@
     <MESSAGE value="firstHW4" />
     <MESSAGE value="firstHW4_01" />
     <MESSAGE value="firstHW4_02" />
-    <option name="LAST_COMMIT_MESSAGE" value="firstHW4_02" />
+    <MESSAGE value="firstHW4_03" />
+    <option name="LAST_COMMIT_MESSAGE" value="firstHW4_03" />
   </component>
 </project>

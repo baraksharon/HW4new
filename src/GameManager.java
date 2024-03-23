@@ -419,6 +419,18 @@ public class GameManager implements Cloneable  {
     public void useItem(Item it) {
         it.useItem(this.player);
     }
+
+    @Override
+    public GameManager clone() {
+        try {
+            GameManager copy = (GameManager) super.clone();
+            copy.rooms = this.rooms.clone(); // Deep copy of rooms
+            copy.player = this.player.clone(); // Deep copy of player
+            return copy;
+        } catch (CloneNotSupportedException e) {
+            return null;
+        }
+    }
 }
 
 
