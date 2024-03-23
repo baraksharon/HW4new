@@ -1,4 +1,6 @@
 import java.util.Iterator;
+import java.lang.reflect.Method;
+
 
 public class GameManager implements Cloneable  {
     private QuartlyLinkedList<Room> rooms;
@@ -310,6 +312,23 @@ public class GameManager implements Cloneable  {
         it.useItem(this.player);
     }
 
+//    /**
+//     * Creates a deep copy of the GameManager object.
+//     *
+//     * @return A cloned GameManager object or null if cloning is not supported.
+//     */
+//    @Override
+//    public GameManager clone() {
+//        try {
+//            GameManager copy = (GameManager) super.clone();
+//            copy.rooms = this.rooms.clone(); // Deep copy of rooms
+//            copy.player = this.player.clone(); // Deep copy of player
+//            return copy;
+//        } catch (CloneNotSupportedException e) {
+//            return null;
+//        }
+//    }
+
     /**
      * Creates a deep copy of the GameManager object.
      *
@@ -318,11 +337,19 @@ public class GameManager implements Cloneable  {
     @Override
     public GameManager clone() {
         try {
-            GameManager copy = (GameManager) super.clone();
-            copy.rooms = this.rooms.clone(); // Deep copy of rooms
-            copy.player = this.player.clone(); // Deep copy of player
+            // Find the clone method of the GameManager class
+            Method cloneMethod = GameManager.class.getMethod("clone");
+
+            // Invoke the clone method on the current object
+            GameManager copy = (GameManager) cloneMethod.invoke(this);
+
+            // Perform deep copy for the fields that require it
+            copy.rooms = this.rooms.clone();
+            copy.player = this.player.clone();
+
             return copy;
-        } catch (CloneNotSupportedException e) {
+        } catch (Exception e) {
+            // Handle exceptions
             return null;
         }
     }

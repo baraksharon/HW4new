@@ -1,3 +1,5 @@
+import java.lang.reflect.Method;
+
 public class QuartNode<T extends Cloneable> implements Cloneable {
     private T value;
     private QuartNode<T> north;
@@ -171,6 +173,22 @@ public class QuartNode<T extends Cloneable> implements Cloneable {
         return null;
     }
 
+//    /**
+//     * Creates and returns a shallow copy of this object.
+//     *
+//     * @return a clone of this instance
+//     * @throws CloneNotSupportedException if the object's class does not support the Cloneable interface
+//     */
+//    @Override
+//    public T clone(){
+//        try{
+//            return (T) super.clone();
+//
+//        } catch (CloneNotSupportedException e) {
+//            return null;
+//        }
+//    }
+
     /**
      * Creates and returns a shallow copy of this object.
      *
@@ -178,11 +196,11 @@ public class QuartNode<T extends Cloneable> implements Cloneable {
      * @throws CloneNotSupportedException if the object's class does not support the Cloneable interface
      */
     @Override
-    public T clone(){
-        try{
-            return (T) super.clone();
-
-        } catch (CloneNotSupportedException e) {
+    public T clone() {
+        try {
+            Method cloneMethod = super.getClass().getMethod("clone");
+            return (T) cloneMethod.invoke(super.clone());
+        } catch (Exception e) {
             return null;
         }
     }
