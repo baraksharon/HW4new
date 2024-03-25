@@ -1,3 +1,4 @@
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class QuartNode<T extends Cloneable> implements Cloneable {
@@ -28,21 +29,37 @@ public class QuartNode<T extends Cloneable> implements Cloneable {
      * @param other the QuartNode to connect to
      */
     public QuartNode(T value, Direction d, QuartNode<T> other){
-        QuartNode<T> newNode=new QuartNode<T>(value);
-        if(d==Direction.NORTH){
-            newNode.north=other;
-            other.south=newNode;
-        } else if(d==Direction.SOUTH){
-            newNode.south=other;
-            other.north=newNode;
-        } else if(d==Direction.EAST){
-            newNode.east=other;
-            other.west=newNode;
-        } else if(d==Direction.WEST){
+        QuartNode<T> newNode= new QuartNode<T>(value);
+        if(d== Direction.NORTH){
+            newNode.south= other;
+            other.north= newNode;
+        } else if(d== Direction.SOUTH){
+            newNode.north= other;
+            other.south= newNode;
+        } else if(d== Direction.EAST){
             newNode.west=other;
-            other.east=newNode;
+            other.east= newNode;
+        } else if(d== Direction.WEST){
+            newNode.east= other;
+            other.west= newNode;
         }
     }
+//    public QuartNode(T value, Direction d, QuartNode<T> other){
+//        QuartNode<T> newNode= new QuartNode<T>(value);
+//        if(d== Direction.NORTH){
+//            newNode.north= other;
+//            other.south= newNode;
+//        } else if(d== Direction.SOUTH){
+//            newNode.south= other;
+//            other.north= newNode;
+//        } else if(d== Direction.EAST){
+//            newNode.east=other;
+//            other.west= newNode;
+//        } else if(d== Direction.WEST){
+//            newNode.west= other;
+//            other.east= newNode;
+//        }
+//    }
 
     /**
      * Gets the value stored in this QuartNode.
@@ -69,7 +86,7 @@ public class QuartNode<T extends Cloneable> implements Cloneable {
      * @return the QuartNode in the specified direction, or null if the direction is invalid
      */
     public QuartNode<T> getDirection(Direction d){
-        if(d==Direction.NORTH){
+        if(d== Direction.NORTH){
             return this.north;
         } else if(d==Direction.SOUTH){
             return this.south;
@@ -89,13 +106,13 @@ public class QuartNode<T extends Cloneable> implements Cloneable {
      */
     public QuartNode<T> oppDirection(Direction d){
         if(d==Direction.NORTH){
-            return this.south;
-        } else if(d==Direction.SOUTH){
             return this.north;
+        } else if(d==Direction.SOUTH){
+            return this.south;
         } else if(d==Direction.EAST){
-            return this.west;
-        } else if(d==Direction.WEST){
             return this.east;
+        } else if(d==Direction.WEST){
+            return this.west;
         }
         return null;
     }
@@ -173,36 +190,36 @@ public class QuartNode<T extends Cloneable> implements Cloneable {
         return null;
     }
 
-//    /**
-//     * Creates and returns a shallow copy of this object.
-//     *
-//     * @return a clone of this instance
-//     * @throws CloneNotSupportedException if the object's class does not support the Cloneable interface
-//     */
-//    @Override
-//    public T clone(){
-//        try{
-//            return (T) super.clone();
-//
-//        } catch (CloneNotSupportedException e) {
-//            return null;
-//        }
-//    }
-
     /**
      * Creates and returns a shallow copy of this object.
      *
      * @return a clone of this instance
      * @throws CloneNotSupportedException if the object's class does not support the Cloneable interface
      */
+//    @Override
+//    public T clone() {
+//        try {
+//            // Clone the value if it implements Cloneable
+//            if (value instanceof Cloneable) {
+//                Method cloneMethod = value.getClass().getMethod("clone");
+//                return (T) cloneMethod.invoke(value);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace(); // Handle or log the exception appropriately
+//        }
+//        return null;
+//    }
+
+
     @Override
-    public T clone() {
+    public T  clone(){
         try {
-            Method cloneMethod = super.getClass().getMethod("clone");
-            return (T) cloneMethod.invoke(super.clone());
-        } catch (Exception e) {
+            Method cloneMethod = value.getClass().getMethod("clone");
+                return (T) cloneMethod.invoke(value);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             return null;
         }
     }
+
 
 }

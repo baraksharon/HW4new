@@ -196,6 +196,11 @@ public class Room implements Cloneable{
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "Room: "+this.name+".";
+    }
+
     /**
      * Creates a deep copy of the Room object.
      *

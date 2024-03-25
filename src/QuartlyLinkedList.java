@@ -26,25 +26,29 @@ public class QuartlyLinkedList <T extends Cloneable> implements Iterable<QuartNo
      * @param toInsert the element to be added
      * @param target the target element to which the new element will be adjacent
      * @param d the direction in which to insert the new element
-     * @throws DirectionIsOccupiedException if the specified direction is already occupied by another element
-     * @throws NoSuchElementException if the target element is not found in this QuartlyLinkedList
+     * @throws DirectionIsOccupied if the specified direction is already occupied by another element
+     * @throws NoSuchElement if the target element is not found in this QuartlyLinkedList
      */
-    public void add(T toInsert,T target,Direction d){
-        if(this==null){
-            this.root=new QuartNode<>(toInsert);
+    public void add(T toInsert, T target, Direction d){
+        if(this.getRoot() == null){
+            this.root= new QuartNode<>(toInsert);
         } else {
             Iterator<QuartNode<T>> iterator = iterator();
+            boolean isFound= false;
             while (iterator.hasNext()) {
                 QuartNode<T> element = iterator.next();
                 if(element.getValue().equals(target)){
                     if(element.oppDirection(d)== null){
+                        isFound= true;
                         QuartNode<T> newNode= new QuartNode<>(toInsert, d, element);
                     } else {
-                        throw new DirectionIsOccupiedException();
+                        throw new DirectionIsOccupied();
                     }
                 }
             }
-            throw new NoSuchElementException();
+            if( ! isFound){
+                throw new NoSuchElement();
+            }
         }
     }
 
@@ -53,13 +57,15 @@ public class QuartlyLinkedList <T extends Cloneable> implements Iterable<QuartNo
      * This method removes all references to the element in all directions.
      *
      * @param toRemove the element to be removed from this QuartlyLinkedList, if present
-     * @throws NoSuchElementException if the element is not present in this QuartlyLinkedList
+     * @throws NoSuchElement if the element is not present in this QuartlyLinkedList
      */
     public void remove(T toRemove){
         Iterator<QuartNode<T>> iterator = iterator();
+        Boolean isFound= false;
         while (iterator.hasNext()) {
             QuartNode<T> element = iterator.next();
             if(element.getValue().equals(toRemove)){
+                isFound= true;
                 if(element.getNeighbor(Direction.NORTH)!=null){
                     element.getNeighbor(Direction.NORTH).setSouth(null);
                     element.setNorth(null);
@@ -78,7 +84,9 @@ public class QuartlyLinkedList <T extends Cloneable> implements Iterable<QuartNo
                 }
             }
         }
-        throw new NoSuchElementException();
+        if(! isFound){
+            throw new NoSuchElement();
+        }
     }
 
     /**
@@ -100,7 +108,7 @@ public class QuartlyLinkedList <T extends Cloneable> implements Iterable<QuartNo
     public QuartlyLinkedList<T> clone() {
         try {
             QuartlyLinkedList<T> copy = (QuartlyLinkedList<T>) super.clone();
-            copy.root = cloneNode(root); // Cloning the root node
+            copy.root = cloneNodesUsingIterator(); // Cloning the root node
             return copy;
         } catch (CloneNotSupportedException e) {
             return null;
@@ -113,16 +121,76 @@ public class QuartlyLinkedList <T extends Cloneable> implements Iterable<QuartNo
      * @param node The node to clone.
      * @return The cloned QuartNode and its neighbors.
      */
-    private QuartNode<T> cloneNode(QuartNode<T> node) {
-        if (node == null) {
+//    private QuartNode<T> cloneNode(QuartNode<T> node) {
+//        if (node == null) {
+//            return null;
+//        }
+//        QuartNode<T> clonedNode = new QuartNode<>(node.clone()); // Cloning the value of the node
+//        if (node.getDirection(Direction.NORTH) != null && clonedNode != node) {
+//            clonedNode.setNorth(cloneNode(node.getDirection(Direction.NORTH))); // Cloning north neighbor recursively
+//        }
+//        if (node.getDirection(Direction.EAST) != null && clonedNode != node) {
+//            clonedNode.setEast(cloneNode(node.getDirection(Direction.EAST)));   // Cloning east neighbor recursively
+//        }
+//        if (node.getDirection(Direction.SOUTH) != null && clonedNode != node) {
+//            clonedNode.setSouth(cloneNode(node.getDirection(Direction.SOUTH))); // Cloning south neighbor recursively
+//        }
+//        if (node.getDirection(Direction.WEST) != null && clonedNode != node) {
+//            clonedNode.setWest(cloneNode(node.getDirection(Direction.WEST)));   // Cloning west neighbor recursively
+//        }
+//        return clonedNode;
+//    }
+    /**
+     * Clones all nodes in the linked list and their neighbors using an iterator.
+     *
+     * @return The cloned root node of the linked list.
+     */
+    public QuartNode<T> cloneNodesUsingIterator() {
+        if (root == null) {
             return null;
         }
-        QuartNode<T> clonedNode = new QuartNode<>(node.clone()); // Cloning the value of the node
-        clonedNode.setNorth(cloneNode(node.getDirection(Direction.NORTH))); // Cloning north neighbor recursively
-        clonedNode.setEast(cloneNode(node.getDirection(Direction.EAST)));   // Cloning east neighbor recursively
-        clonedNode.setSouth(cloneNode(node.getDirection(Direction.SOUTH))); // Cloning south neighbor recursively
-        clonedNode.setWest(cloneNode(node.getDirection(Direction.WEST)));   // Cloning west neighbor recursively
-        return clonedNode;
+
+        // Create a new root node with the cloned value
+        QuartNode<T> clonedRoot = new QuartNode<>(root.clone());
+
+        // Initialize iterator for the original linked list
+        Iterator<QuartNode<T>> iterator = iterator();
+
+        // Initialize variables to keep track of current nodes
+        QuartNode<T> currentOriginalNode = root;
+        QuartNode<T> currentClonedNode = clonedRoot;
+
+        if(iterator.hasNext()) {
+            QuartNode<T> originalNextNode = iterator.next();
+            // Iterate through the linked list using the iterator
+            while (iterator.hasNext()) {
+                // Move to the next node in the original linked list
+                originalNextNode = iterator.next();
+
+                // Clone the value of the next node and create a new QuartNode
+                QuartNode<T> clonedNextNode = new QuartNode<>(originalNextNode.clone());
+
+                // Connect the cloned nodes in the appropriate directions
+                if (currentOriginalNode.getDirection(Direction.NORTH) != null) {
+                    currentClonedNode.setNorth(clonedNextNode);
+                }
+                if (currentOriginalNode.getDirection(Direction.EAST) != null) {
+                    currentClonedNode.setEast(clonedNextNode);
+                }
+                if (currentOriginalNode.getDirection(Direction.SOUTH) != null) {
+                    currentClonedNode.setSouth(clonedNextNode);
+                }
+                if (currentOriginalNode.getDirection(Direction.WEST) != null) {
+                    currentClonedNode.setWest(clonedNextNode);
+                }
+
+                // Update the current nodes for the next iteration
+                currentOriginalNode = originalNextNode;
+                currentClonedNode = clonedNextNode;
+            }
+
+        }
+        return clonedRoot;
     }
 
 }

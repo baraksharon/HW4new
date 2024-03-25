@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db1e43e6-1356-4667-81d8-675098fb49e2" name="Changes" comment="firstHW4_05">
+    <list default="true" id="db1e43e6-1356-4667-81d8-675098fb49e2" name="Changes" comment="firstHW4_06">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Direction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DirectionIsOccupiedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DirectionIsOccupied.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NoSuchElementException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NoSuchElement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/QuartNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuartNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuartlyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuartlyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room.java" afterDir="false" />
     </list>
     <list id="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" name="Changes by sagid" comment="">
       <change beforePath="$PROJECT_DIR$/src/Bag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bag.java" afterDir="false" />
@@ -61,7 +68,9 @@
       <updated>1710529747888</updated>
       <workItem from="1710529749832" duration="11278000" />
       <workItem from="1710601448486" duration="4604000" />
-      <workItem from="1710606084319" duration="20763000" />
+      <workItem from="1710606084319" duration="20798000" />
+      <workItem from="1711217152711" duration="152000" />
+      <workItem from="1711294590930" duration="16566000" />
     </task>
     <task id="LOCAL‎-00001" summary="firstHW4_01">
       <created>1710541263122</created>
@@ -112,7 +121,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1711216289650</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL‎-00008" summary="firstHW4_06">
+      <created>1711216590032</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL‎-00008" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1711216590032</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +141,14 @@
     <MESSAGE value="firstHW4_03" />
     <MESSAGE value="firstHW4_04" />
     <MESSAGE value="firstHW4_05" />
-    <option name="LAST_COMMIT_MESSAGE" value="firstHW4_05" />
+    <MESSAGE value="firstHW4_06" />
+    <option name="LAST_COMMIT_MESSAGE" value="firstHW4_06" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="QuartlyLinkedList" memberName="root" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

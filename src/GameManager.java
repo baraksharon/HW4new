@@ -115,7 +115,12 @@ public class GameManager implements Cloneable  {
      * @param r the room to be removed
      */
     public void removeRoom(Room r) {
-        rooms.remove(r); // Remove the specified room from the list of rooms in the game
+        try {
+            rooms.remove(r); // Remove the specified room from the list of rooms in the game
+        }
+        catch (NoSuchElement e){
+            throw new RoomDoesNotExistException();
+        }
     }
 
     /**
@@ -349,7 +354,6 @@ public class GameManager implements Cloneable  {
 
             return copy;
         } catch (Exception e) {
-            // Handle exceptions
             return null;
         }
     }
