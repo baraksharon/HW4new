@@ -45,14 +45,36 @@ class MyCloneable implements Cloneable {
 
 public class Main {
     public static void main(String[] args){
-        System.out.println("Test 1 starts");
-        test1();
-        System.out.println("Test 1 done");
-        System.out.println("--------------------------------------------");
+        try {
+            System.out.println("Test 1 starts");
+            test1();
+            System.out.println("Test 1 done");
+            System.out.println("--------------------------------------------");
+        }catch (Exception e){
+            System.out.println("exception " + e);
+        }
+
+        try {
+            System.out.println("Test 2 starts");
+            test2();
+            System.out.println("Test 2 done");
+            System.out.println("--------------------------------------------");
+        }catch (Exception e){
+            System.out.println("exception " + e);
+        }
+
+        try {
+            System.out.println("Test 3 starts");
+            test3();
+            System.out.println("Test 3 done");
+            System.out.println("--------------------------------------------");
+        }catch (Exception e){
+            System.out.println("exception " + e);
+        }
     }
 
     /**
-     //     * Run first test of hw2
+     //     * Run first test of hw4
      //     */
     public static void test1(){
         MyCloneable element1 = new MyCloneable(1);
@@ -103,5 +125,61 @@ public class Main {
         for(QuartNode<MyCloneable> node: cloned){
             System.out.println(node.getValue());
         }
+    }
+
+    /**
+     //     * Run second test of hw4
+     //     */
+    public static void test2() {
+        GameManager gameManager = new GameManager();
+
+        Room room1 = new Room("Room 1");
+        Room room2 = new Room("Room 2");
+        Room room3 = new Room("Room 3");
+        Room room4 = new Room("Room 4");
+        Room room5 = new Room("Room 5");
+        Room room6 = new Room("Room 6");
+
+        gameManager.addRoom(room1, null, null);
+        gameManager.addRoom(room2, room1, Direction.NORTH);
+        gameManager.addRoom(room3, room2, Direction.WEST);
+        gameManager.addRoom(room4, room2, Direction.EAST);
+        gameManager.addRoom(room5, room1, Direction.SOUTH);
+        gameManager.addRoom(room6, room2, Direction.NORTH);
+
+        Player player = new Player("Player 1", 5);
+
+        gameManager.addPlayer(player);
+        gameManager.startPlayer(room6);
+
+        gameManager.movePlayer(Direction.NORTH);
+        gameManager.movePlayer(Direction.SOUTH);
+
+        gameManager.movePlayer(Direction.WEST);
+        gameManager.movePlayer(Direction.SOUTH);
+        gameManager.movePlayer(Direction.EAST);
+
+        gameManager.movePlayer(Direction.SOUTH);
+        gameManager.movePlayer(Direction.SOUTH);
+        gameManager.movePlayer(Direction.NORTH);
+
+    }
+    /**
+     //     * Run second test of hw3
+     //     */
+    public static void test3() {
+        Room room1 = new Room("Room 1");
+
+        Room room2 = room1.clone();
+
+        boolean areSame = room1 == room2;
+        System.out.println("Are room1 and room2 the same: " + areSame);
+
+        Relic item1 = new Relic("Item 1", 6);
+
+        Relic item2 = item1.clone();
+
+        areSame = item1 == item2;
+        System.out.println("Are item1 and item2 the same: " + areSame);
     }
 }

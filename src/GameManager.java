@@ -160,7 +160,7 @@ public class GameManager implements Cloneable  {
                 }
             }
         }
-        if (isFound){
+        if ( ! isFound ){
             System.out.println(this.player.getName() + " could not move via the " + dMove + " exit.");
         }
     }

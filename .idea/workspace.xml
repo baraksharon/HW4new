@@ -4,19 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db1e43e6-1356-4667-81d8-675098fb49e2" name="Changes" comment="firstHW4_06">
+    <list default="true" id="db1e43e6-1356-4667-81d8-675098fb49e2" name="Changes" comment="firstHW4_007">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Direction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DirectionIsOccupiedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DirectionIsOccupied.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NoSuchElementException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NoSuchElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuartNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuartNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuartlyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuartlyLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room.java" afterDir="false" />
     </list>
     <list id="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" name="Changes by sagid" comment="">
       <change beforePath="$PROJECT_DIR$/src/Bag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Key.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LargeBag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LargeBag.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
@@ -36,6 +31,16 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/GameManager.java">
+      <ranges>
+        <range start1="42" end1="53" start2="42" end2="57" changelist="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" />
+        <range start1="55" end1="60" start2="59" end2="65" changelist="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" />
+        <range start1="68" end1="68" start2="73" end2="74" changelist="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" />
+        <range start1="162" end1="163" start2="168" end2="169" changelist="db1e43e6-1356-4667-81d8-675098fb49e2" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -70,7 +75,8 @@
       <workItem from="1710601448486" duration="4604000" />
       <workItem from="1710606084319" duration="20798000" />
       <workItem from="1711217152711" duration="152000" />
-      <workItem from="1711294590930" duration="16566000" />
+      <workItem from="1711294590930" duration="16621000" />
+      <workItem from="1711470317534" duration="2837000" />
     </task>
     <task id="LOCAL‎-00001" summary="firstHW4_01">
       <created>1710541263122</created>
@@ -128,7 +134,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1711216590032</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL‎-00009" summary="firstHW4_007">
+      <created>1711388222176</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL‎-00009" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1711388222176</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,9 +155,24 @@
     <MESSAGE value="firstHW4_04" />
     <MESSAGE value="firstHW4_05" />
     <MESSAGE value="firstHW4_06" />
-    <option name="LAST_COMMIT_MESSAGE" value="firstHW4_06" />
+    <MESSAGE value="firstHW4_007" />
+    <option name="LAST_COMMIT_MESSAGE" value="firstHW4_007" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>157</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="QuartlyLinkedList" memberName="root" />
