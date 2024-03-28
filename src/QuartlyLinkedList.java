@@ -116,31 +116,6 @@ public class QuartlyLinkedList <T extends Cloneable> implements Iterable<QuartNo
     }
 
     /**
-     * Recursively clones a QuartNode and its neighbors.
-     *
-     * @param node The node to clone.
-     * @return The cloned QuartNode and its neighbors.
-     */
-//    private QuartNode<T> cloneNode(QuartNode<T> node) {
-//        if (node == null) {
-//            return null;
-//        }
-//        QuartNode<T> clonedNode = new QuartNode<>(node.clone()); // Cloning the value of the node
-//        if (node.getDirection(Direction.NORTH) != null && clonedNode != node) {
-//            clonedNode.setNorth(cloneNode(node.getDirection(Direction.NORTH))); // Cloning north neighbor recursively
-//        }
-//        if (node.getDirection(Direction.EAST) != null && clonedNode != node) {
-//            clonedNode.setEast(cloneNode(node.getDirection(Direction.EAST)));   // Cloning east neighbor recursively
-//        }
-//        if (node.getDirection(Direction.SOUTH) != null && clonedNode != node) {
-//            clonedNode.setSouth(cloneNode(node.getDirection(Direction.SOUTH))); // Cloning south neighbor recursively
-//        }
-//        if (node.getDirection(Direction.WEST) != null && clonedNode != node) {
-//            clonedNode.setWest(cloneNode(node.getDirection(Direction.WEST)));   // Cloning west neighbor recursively
-//        }
-//        return clonedNode;
-//    }
-    /**
      * Clones all nodes in the linked list and their neighbors using an iterator.
      *
      * @return The cloned root node of the linked list.

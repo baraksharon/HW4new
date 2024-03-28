@@ -66,11 +66,11 @@ public class Key extends Item{
         } else {
             boolean isKeyNearby = isNearBy(this, player);
             if (isKeyNearby) {
-                for (int i = 0; i < currentRoom.getListItems().length; i++) { // Checking if the item is in the Room
-                    if (currentRoom.getListItems()[i] != null && currentRoom.getListItems()[i].equals(this)) {
+                for (int i = 0; i < currentRoom.getItems().length; i++) { // Checking if the item is in the Room
+                    if (currentRoom.getItems()[i] != null && currentRoom.getItems()[i].equals(this)) {
                         player.getCurrentRoom().setRoomKey(this);
                         player.getCurrentRoom().setKeyRoomStatus(true);
-                        currentRoom.getListItems()[i] = null;
+                        currentRoom.getItems()[i] = null;
                     }
                 }
                 for (int j = 0; j < player.getInventory().length; j++) {  // Checking if the item is in the player's bag

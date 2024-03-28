@@ -44,22 +44,6 @@ public class QuartNode<T extends Cloneable> implements Cloneable {
             other.west= newNode;
         }
     }
-//    public QuartNode(T value, Direction d, QuartNode<T> other){
-//        QuartNode<T> newNode= new QuartNode<T>(value);
-//        if(d== Direction.NORTH){
-//            newNode.north= other;
-//            other.south= newNode;
-//        } else if(d== Direction.SOUTH){
-//            newNode.south= other;
-//            other.north= newNode;
-//        } else if(d== Direction.EAST){
-//            newNode.east=other;
-//            other.west= newNode;
-//        } else if(d== Direction.WEST){
-//            newNode.west= other;
-//            other.east= newNode;
-//        }
-//    }
 
     /**
      * Gets the value stored in this QuartNode.
@@ -191,26 +175,11 @@ public class QuartNode<T extends Cloneable> implements Cloneable {
     }
 
     /**
-     * Creates and returns a shallow copy of this object.
+     * Creates and returns a shallow copy of this object's value.
      *
-     * @return a clone of this instance
+     * @return a clone of this instance's value
      * @throws CloneNotSupportedException if the object's class does not support the Cloneable interface
      */
-//    @Override
-//    public T clone() {
-//        try {
-//            // Clone the value if it implements Cloneable
-//            if (value instanceof Cloneable) {
-//                Method cloneMethod = value.getClass().getMethod("clone");
-//                return (T) cloneMethod.invoke(value);
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace(); // Handle or log the exception appropriately
-//        }
-//        return null;
-//    }
-
-
     @Override
     public T  clone(){
         try {

@@ -1,3 +1,4 @@
+import java.security.PublicKey;
 import java.util.Iterator;
 import java.lang.reflect.Method;
 
@@ -173,8 +174,8 @@ public class GameManager implements Cloneable  {
     public void pickUpItem(Item it) {
         Room current = this.player.getCurrentRoom();
         boolean isInRoom =false;
-        for (int j = 0; j < current.getListItems().length; j++) {
-            if (current.getListItems()[j] != null && current.getListItems()[j].equals(it)) {
+        for (int j = 0; j < current.getItems().length; j++) {
+            if (current.getItems()[j] != null && current.getItems()[j].equals(it)) {
                 isInRoom = true;
                 boolean isTherePlace = false;
                 int count = 0;
@@ -220,8 +221,8 @@ public class GameManager implements Cloneable  {
             Room current = this.player.getCurrentRoom();
             boolean isTherePlaceInRoom = false;
             int counter = 0;
-            while (!isTherePlaceInRoom && counter < current.getListItems().length) {
-                if (current.getListItems()[counter] == null) {
+            while (!isTherePlaceInRoom && counter < current.getItems().length) {
+                if (current.getItems()[counter] == null) {
                     isTherePlaceInRoom = true;
                 } else {
                     counter += 1;
@@ -254,9 +255,9 @@ public class GameManager implements Cloneable  {
                 isDestroyed = true;
             }
         }
-        for (int k = 0; k < this.player.getCurrentRoom().getListItems().length; k++) {
-            if (this.player.getCurrentRoom().getListItems()[k] != null && this.player.getCurrentRoom().getListItems()[k].equals(it)) {
-                theEqual = this.player.getCurrentRoom().getListItems()[k];
+        for (int k = 0; k < this.player.getCurrentRoom().getItems().length; k++) {
+            if (this.player.getCurrentRoom().getItems()[k] != null && this.player.getCurrentRoom().getItems()[k].equals(it)) {
+                theEqual = this.player.getCurrentRoom().getItems()[k];
                 this.player.destroyItemFromCurrentRoom(it, k);
                 isDestroyed = true;
             }
@@ -317,22 +318,14 @@ public class GameManager implements Cloneable  {
         it.useItem(this.player);
     }
 
-//    /**
-//     * Creates a deep copy of the GameManager object.
-//     *
-//     * @return A cloned GameManager object or null if cloning is not supported.
-//     */
-//    @Override
-//    public GameManager clone() {
-//        try {
-//            GameManager copy = (GameManager) super.clone();
-//            copy.rooms = this.rooms.clone(); // Deep copy of rooms
-//            copy.player = this.player.clone(); // Deep copy of player
-//            return copy;
-//        } catch (CloneNotSupportedException e) {
-//            return null;
-//        }
-//    }
+    /**
+     * Returns the linked list of rooms stored in this GameManager.
+     *
+     * @return The linked list of rooms.
+     */
+    public QuartlyLinkedList<Room> getRooms(){
+        return this.rooms;
+    }
 
     /**
      * Creates a deep copy of the GameManager object.
@@ -342,21 +335,25 @@ public class GameManager implements Cloneable  {
     @Override
     public GameManager clone() {
         try {
-            // Find the clone method of the GameManager class
-            Method cloneMethod = GameManager.class.getMethod("clone");
-
-            // Invoke the clone method on the current object
-            GameManager copy = (GameManager) cloneMethod.invoke(this);
-
-            // Perform deep copy for the fields that require it
-            copy.rooms = this.rooms.clone();
-            copy.player = this.player.clone();
-
+            GameManager copy = (GameManager) super.clone(); // Shallow copy
+            if (this.rooms != null) {
+                Method cloneRoomsMethod = QuartlyLinkedList.class.getMethod("clone");
+                // Assuming clone() is overridden in QuartlyLinkedList and accessible
+                copy.rooms = (QuartlyLinkedList<Room>) cloneRoomsMethod.invoke(this.rooms);
+            }
+            if (this.player != null) {
+                Method clonePlayerMethod = Player.class.getMethod("clone");
+                // Assuming clone() is overridden in Player and accessible
+                copy.player = (Player) clonePlayerMethod.invoke(this.player);
+            }
             return copy;
-        } catch (Exception e) {
-            return null;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        } catch (ReflectiveOperationException e) {
+            throw new RuntimeException();
         }
     }
+
 }
 
 

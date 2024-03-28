@@ -85,7 +85,7 @@ public class Player {
      * @param index The index of the item in the current room's item list.
      */
     public void destroyItemFromCurrentRoom(Item it, int index) {
-        this.currentRoom.getListItems()[index]= null;
+        this.currentRoom.getItems()[index]= null;
     }
 
     /**
@@ -95,9 +95,9 @@ public class Player {
      * @param place   The index where the item should be placed in the inventory.
      */
     public void addItemToBag(Item newItem, int place){
-        for(int i=0; i<this.getCurrentRoom().getListItems().length; i++){
-            if(this.getCurrentRoom().getListItems()[i] != null && this.getCurrentRoom().getListItems()[i].equals(newItem)){
-                this.getCurrentRoom().getListItems()[i]= null;
+        for(int i = 0; i<this.getCurrentRoom().getItems().length; i++){
+            if(this.getCurrentRoom().getItems()[i] != null && this.getCurrentRoom().getItems()[i].equals(newItem)){
+                this.getCurrentRoom().getItems()[i]= null;
             }
         }
         this.playerBag.getInventory()[place]=newItem;
@@ -116,7 +116,7 @@ public class Player {
                 this.playerBag.getInventory()[i]= null;
             }
         }
-        this.currentRoom.getListItems()[place]= itemToDrop;
+        this.currentRoom.getItems()[place]= itemToDrop;
         System.out.println(this.name + " dropped " + itemToDrop.getName() + " in " + currentRoom.getRoomName() + ".");
     }
 

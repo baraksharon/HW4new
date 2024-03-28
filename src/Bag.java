@@ -1,6 +1,4 @@
-import java.sql.SQLOutput;
-
-public class Bag extends Item {
+public class Bag extends Item implements Cloneable {
     protected int cap;
     protected Item[] inventory;
 
@@ -181,9 +179,9 @@ public class Bag extends Item {
                     }
                     player.destroyBag(player.getPlayerBag());
                     player.setPlayerBag(this);
-                    for (int u = 0; u < player.getCurrentRoom().getListItems().length; u++) { // Checking where the item is in the Room and remove him
-                        if (player.getCurrentRoom().getListItems()[u] != null && player.getCurrentRoom().getListItems()[u].equals(this)) {
-                            player.getCurrentRoom().getListItems()[u] = null;
+                    for (int u = 0; u < player.getCurrentRoom().getItems().length; u++) { // Checking where the item is in the Room and remove him
+                        if (player.getCurrentRoom().getItems()[u] != null && player.getCurrentRoom().getItems()[u].equals(this)) {
+                            player.getCurrentRoom().getItems()[u] = null;
                         }
                     }
                     System.out.println(player.getName() + " is now carrying " + this.getName() + ".");

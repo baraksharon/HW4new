@@ -115,7 +115,7 @@ public class Room implements Cloneable{
      *
      * @return The list of items in the room.
      */
-    public Item[] getListItems(){return this.listItems;}
+    public Item[] getItems(){return this.listItems;}
 
     /**
      * Establishes a connection between two rooms.
@@ -153,9 +153,9 @@ public class Room implements Cloneable{
     public int sumValuesOfRoomItems() {
         int sum = 0;
         if (this != null) {
-            for (int i = 0; i < this.getListItems().length; i++) {
-                if (this.getListItems()[i] != null) {
-                    sum += this.getListItems()[i].getValue();
+            for (int i = 0; i < this.getItems().length; i++) {
+                if (this.getItems()[i] != null) {
+                    sum += this.getItems()[i].getValue();
                 }
             }
         }

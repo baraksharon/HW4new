@@ -41,8 +41,8 @@ abstract class Item implements Cloneable {
     public boolean isNearBy(Item item, Player player) {
         boolean isNearby = false;
         Room currentRoom = player.getCurrentRoom();
-        for (int i = 0; i < currentRoom.getListItems().length; i++) { // Checking if the item is in the Room
-            if (currentRoom.getListItems()[i] != null && currentRoom.getListItems()[i].equals(this)) {
+        for (int i = 0; i < currentRoom.getItems().length; i++) { // Checking if the item is in the Room
+            if (currentRoom.getItems()[i] != null && currentRoom.getItems()[i].equals(this)) {
                 isNearby = true;
             }
         }
@@ -63,9 +63,9 @@ abstract class Item implements Cloneable {
      */
     public Item findEqual(Item item, Player player) {
         Room currentRoom = player.getCurrentRoom();
-        for (int i = 0; i < currentRoom.getListItems().length; i++) { // Checking if the item is in the Room
-            if (currentRoom.getListItems()[i] != null && currentRoom.getListItems()[i].equals(this)) {
-                return currentRoom.getListItems()[i];
+        for (int i = 0; i < currentRoom.getItems().length; i++) { // Checking if the item is in the Room
+            if (currentRoom.getItems()[i] != null && currentRoom.getItems()[i].equals(this)) {
+                return currentRoom.getItems()[i];
             }
         }
         for (int j = 0; j < player.getInventory().length; j++) { // Checking if the item is in the player's bag
