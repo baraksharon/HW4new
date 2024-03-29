@@ -190,5 +190,4 @@ public class QuartNode<T extends Cloneable> implements Cloneable {
         }
     }
 
-
 }

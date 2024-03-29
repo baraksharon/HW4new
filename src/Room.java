@@ -88,7 +88,6 @@ public class Room implements Cloneable{
         } else {
             System.out.println("Could not add " + i.getName() + " to the game.");
         }
-
     }
 
     /**

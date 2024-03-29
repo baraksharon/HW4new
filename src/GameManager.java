@@ -1,8 +1,6 @@
 import java.security.PublicKey;
 import java.util.Iterator;
 import java.lang.reflect.Method;
-
-
 public class GameManager implements Cloneable  {
     private QuartlyLinkedList<Room> rooms;
     private Player player;
@@ -136,7 +134,6 @@ public class GameManager implements Cloneable  {
         } else {
             System.out.println(this.player.getName() + " has already started.");
         }
-
     }
 
     /**
@@ -233,8 +230,6 @@ public class GameManager implements Cloneable  {
             } else {
                 System.out.println(current.getRoomName() + " is full.");
             }
-
-
         } else {
             System.out.println(it.getName() + " is not in " + player.getName() + "'s inventory.");
         }
