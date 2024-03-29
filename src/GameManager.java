@@ -77,7 +77,6 @@ public class GameManager implements Cloneable  {
         boolean isThere = false;
         Iterator<QuartNode<Room>> iterator = rooms.iterator();
         while (iterator.hasNext()) {
-
             QuartNode<Room> quartNode = iterator.next();
             if(quartNode.getValue() != null){
                 Room itRoom = quartNode.getValue();
@@ -184,9 +183,9 @@ public class GameManager implements Cloneable  {
                     }
                 }
                 if (isTherePlace) { // There is place to add item in the player's Bag
-                    if ((this.player.getPlayerBag() instanceof Bag && (it instanceof LargeBag || it instanceof Bag)) || // checking if player's bag is instance of Bag and the item is instance of bag or large bag
+                    if ((this.player.getPlayerBag() instanceof Bag && (it instanceof LargeBag || it instanceof Bag)) && // checking if player's bag is instance of Bag and the item is instance of bag or large bag
                             (this.player.getPlayerBag() instanceof LargeBag && it instanceof LargeBag)) {// checking if player's bag is instance of LargeBag and if the item instance of large bag
-                        System.out.println(it.getName() + " is not valid for sorting.");
+                        System.out.println(it.getName() + " is not valid for storing.");
                     } else {
                         this.player.addItemToBag(it, count);
                     }

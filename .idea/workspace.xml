@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db1e43e6-1356-4667-81d8-675098fb49e2" name="Changes" comment="firstHW4_09">
+    <list default="true" id="db1e43e6-1356-4667-81d8-675098fb49e2" name="Changes" comment="firstHW4_10_last">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuartNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuartNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QuartlyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuartlyLinkedList.java" afterDir="false" />
     </list>
     <list id="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" name="Changes by sagid" comment="">
       <change beforePath="$PROJECT_DIR$/src/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameManager.java" afterDir="false" />
@@ -32,18 +28,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/GameManager.java">
-      <ranges>
-        <range start1="3" end1="5" start2="3" end2="3" changelist="db1e43e6-1356-4667-81d8-675098fb49e2" />
-        <range start1="43" end1="54" start2="41" end2="56" changelist="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" />
-        <range start1="56" end1="61" start2="58" end2="64" changelist="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" />
-        <range start1="69" end1="69" start2="72" end2="73" changelist="8ad3c833-5b14-4270-a1ec-be6b5fae2eac" />
-        <range start1="138" end1="139" start2="142" end2="142" changelist="db1e43e6-1356-4667-81d8-675098fb49e2" />
-        <range start1="235" end1="237" start2="238" end2="238" changelist="db1e43e6-1356-4667-81d8-675098fb49e2" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -83,7 +67,7 @@
       <workItem from="1711470317534" duration="3234000" />
       <workItem from="1711559799078" duration="265000" />
       <workItem from="1711615615527" duration="3477000" />
-      <workItem from="1711713797711" duration="3553000" />
+      <workItem from="1711713797711" duration="4037000" />
     </task>
     <task id="LOCAL‎-00001" summary="firstHW4_01">
       <created>1710541263122</created>
@@ -162,7 +146,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1711619110365</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL‎-00012" summary="firstHW4_10_last">
+      <created>1711717461884</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL‎-00012" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1711717461884</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +170,8 @@
     <MESSAGE value="firstHW4_007" />
     <MESSAGE value="firstHW4_08" />
     <MESSAGE value="firstHW4_09" />
-    <option name="LAST_COMMIT_MESSAGE" value="firstHW4_09" />
+    <MESSAGE value="firstHW4_10_last" />
+    <option name="LAST_COMMIT_MESSAGE" value="firstHW4_10_last" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
